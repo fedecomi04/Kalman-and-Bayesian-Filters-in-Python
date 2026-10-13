@@ -33,12 +33,21 @@ Open a terminal and run:
 
 ```sh
 source /Users/federico/miniforge3/etc/profile.d/conda.sh
-conda activate kf_bf
+conda activate kf_bf_compatible
 cd "/Users/federico/Desktop/13_minverva_humanoids/RESEARCH /Kalman-and-Bayesian-Filters-in-Python"
 jupyter notebook --notebook-dir="$PWD" --port=8888 --port-retries=0 04-One-Dimensional-Kalman-Filters.ipynb
 ```
 
-The `kf_bf` environment already exists on this computer. The quoted folder
+The `kf_bf_compatible` environment already exists on this computer. It uses
+Python 3.11, NumPy 1.26.4, SciPy 1.14.1, and Matplotlib 3.6.3 to accommodate
+the book's older code. The original unpinned `kf_bf` environment installed
+NumPy 2, which breaks some FilterPy examples.
+
+Select **Kalman book (Python 3.11)** from the notebook's kernel selector.
+An already-running Jupyter server can also use this registered kernel;
+changing the kernel resets its variables, so rerun cells from the top.
+
+The quoted folder
 path is intentional: `RESEARCH ` has a trailing space in its name.
 
 Keep the terminal running. Jupyter opens a browser; the notebook is available at:
@@ -93,10 +102,19 @@ Then open <http://localhost:8889/notebooks/04-One-Dimensional-Kalman-Filters.ipy
 With Conda installed, run these once from this repository folder:
 
 ```sh
-conda env update -f environment.yml
-conda activate kf_bf
+conda env create -f environment-compatible.yml
+conda activate kf_bf_compatible
+python -m ipykernel install --user --name kf_bf_compatible --display-name "Kalman book (Python 3.11)"
 ```
 
 Then use the Jupyter command above.
+
+Use `environment-compatible.yml` for this setup. The original
+`environment.yml` leaves versions unrestricted and can install incompatible
+releases. To update an existing compatibility environment, use:
+
+```sh
+conda env update -f environment-compatible.yml
+```
 
 Reference: [Jupyter Notebook documentation](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html).

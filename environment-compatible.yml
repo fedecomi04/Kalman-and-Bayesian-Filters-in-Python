@@ -1,0 +1,16 @@
+name: kf_bf_compatible
+dependencies:
+  - python=3.11
+  - pip
+  - numpy=1.26.4
+  - scipy=1.14.1
+  - matplotlib=3.6.3
+  - matplotlib-inline=0.1.7
+  - sympy=1.12
+  - ipython=8
+  - ipykernel=6
+  - notebook=7
+  - ipywidgets=8
+  - nbconvert
+  - pip:
+      - filterpy==1.4.5
