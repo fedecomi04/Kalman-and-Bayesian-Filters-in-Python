@@ -1,5 +1,32 @@
 # Run the Kalman filter notebook locally
 
+## Resume the setup chat in Codex CLI
+
+This chat's session ID is `01a13295-c804-7720-88a4-70d94f08d7fa`.
+It covers local Jupyter setup, this guide, and the personal GitHub fork at
+<https://github.com/fedecomi04/Kalman-and-Bayesian-Filters-in-Python>.
+
+To resume this exact conversation on this Mac, run:
+
+```sh
+cd "/Users/federico/Desktop/13_minverva_humanoids/RESEARCH /Kalman-and-Bayesian-Filters-in-Python"
+codex resume 01a13295-c804-7720-88a4-70d94f08d7fa
+```
+
+To browse saved sessions instead, run:
+
+```sh
+codex resume --all
+```
+
+The session is stored locally under `~/.codex/sessions/`. This ID identifies
+the chat but does not back up its transcript; cloning the GitHub repository
+on another computer does not restore the local session. Keep the local Codex
+session history to resume it later. Use the explicit ID above because
+`codex resume --last` may select a different, newer conversation.
+
+Reference: [Codex CLI documentation](https://learn.chatgpt.com/docs/codex/cli).
+
 ## Start Jupyter
 
 Open a terminal and run:
